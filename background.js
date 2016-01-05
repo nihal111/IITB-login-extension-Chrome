@@ -1,5 +1,6 @@
 var tablink = "https://internet.iitb.ac.in/";
-var interval = 30*60*1000;
+var interval = 29*60*1000;
+
 
 function open(){
 	chrome.tabs.create({ url: tablink });
@@ -31,11 +32,18 @@ function closetab(){
 });
 }
 
-open();
-setTimeout(check_status,400);
-setTimeout(login,500);
-//setTimeout(closetab,2000);
+function perform(){
+	open();
+	setTimeout(check_status,400);
+	setTimeout(login,500);
+	setTimeout(closetab,1000);
+}
+chrome.windows.onCreated.addListener(function() {
+perform();
+});
+setInterval(perform,interval);
 
+document.getElementById('Login').addEventListener('click',perform);
 
 
 

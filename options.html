@@ -1,6 +1,6 @@
 <html>
-	<head> <h2>Details</h2> </head>
-	<body>
+	<head> <h2>Login Details</h2> </head>
+	<body onload="restore_options()">
 		<form>
 			Username:<br>
 			<input type="text" name="uname">
@@ -9,7 +9,11 @@
 			<input type="password" name="password">
 			<br><br>
   			<button id="save" onclick="save_options()">Save</button>
-			<script src="save.js"></script>
+  			<script src="save.js"></script>
+  			<br><br>
+
+  			<button id="Login" onclick="perform()">Login</button>
+			<script src="background.js"></script>
 		</form>
 	</body>
 </html>

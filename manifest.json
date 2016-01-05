@@ -20,8 +20,8 @@
   },
   "content_scripts": [
         {
-            "matches": ["https://internet.iitb.ac.in/",
-                "https://internet.iitb.ac.in/index.php"
+            "matches": ["https://internet.iitb.ac.in/index.php*",
+                "https://internet.iitb.ac.in/"
             ],
             "js": ["myscript.js"]
         }
@@ -32,6 +32,7 @@
    "tabs",
    "storage",
    "http://*/*",
-   "https://*/*"
+   "https://*/*",
+   "background"
    ]
 }

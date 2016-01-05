@@ -27,4 +27,4 @@ function submit()
 }
 
 retrieve();
-setTimeout(submit,1000);
+setTimeout(submit,1);
