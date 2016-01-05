@@ -21,10 +21,6 @@
   "content_scripts": [
         {
             "matches": [
-<<<<<<< HEAD
-=======
-                "https://internet.iitb.ac.in/",
->>>>>>> 9e2cd14fd1e554f044475ee3dd9f6693b84309bd
                 "https://internet.iitb.ac.in/index.php"
             ],
             "js": ["myscript.js"]
