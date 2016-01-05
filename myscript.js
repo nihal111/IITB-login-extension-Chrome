@@ -1,3 +1,4 @@
+alert("Running myscript.js");
 var form = document.forms[0];
   chrome.storage.sync.get("username", function(result) {
     if (!chrome.runtime.error) {
