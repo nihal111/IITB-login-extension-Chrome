@@ -1,4 +1,4 @@
-alert("Running myscript.js");
+
 var form = document.forms[0];
 name="150040015";
 password="npain!!!";

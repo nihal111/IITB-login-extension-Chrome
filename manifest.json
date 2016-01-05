@@ -20,7 +20,7 @@
   },
   "content_scripts": [
         {
-            "matches": [
+            "matches": ["https://internet.iitb.ac.in/",
                 "https://internet.iitb.ac.in/index.php"
             ],
             "js": ["myscript.js"]
