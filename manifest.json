@@ -2,6 +2,7 @@
   "manifest_version": 2,
 
   "name": "IITB Login Extension",
+  "options_page":"options.html",
   "description": "This extension will automatically login into internet.iitb.ac.in page whenever chrome is opened.",
   "version": "1.0",
 
@@ -17,7 +18,14 @@
     "scripts": ["background.js"],
     "persistent": false
   },
-
+  "content_scripts": [
+        {
+            "matches": [
+                "https://internet.iitb.ac.in/index.php"
+            ],
+            "js": ["myscript.js"]
+        }
+        ],
 
   "permissions": [
    "activeTab",

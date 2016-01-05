@@ -11,6 +11,7 @@ function check_status(){
 	    
 	    tablink = tab.url;
 	    console.log("URL:",tab.url);
+
 	});
 }
 	
@@ -18,9 +19,19 @@ function login(){
 	if (tablink=="https://internet.iitb.ac.in/logout.php")
 		console.log("Already logged in");
 	else 
-		console.log("Not logged in");
+		{
+			console.log("Not logged in");
+			
+		}
+}
+
+function closetab(){
+	chrome.tabs.getSelected(null,function(tab) {
+    chrome.tabs.remove(tab.id, function() { });
+});
 }
 
 open();
 setTimeout(check_status,400);
 setTimeout(login,500);
+setTimeout(closetab,900);
