@@ -1,11 +1,14 @@
 // Saves options to chrome.storage
 
 function save_options() {
+	alert("hey");
   var username = document.getElementsByTagName('input')[0].value;
   var password = document.getElementsByTagName('input')[1].value;
   chrome.storage.sync.set({ "username" : username }, function() {
     if (chrome.runtime.error) {
       console.log("Runtime error.");
+     else
+     	alert(username);
     }
   });
     chrome.storage.sync.set({ "password" : password }, function() {
@@ -33,3 +36,4 @@ function restore_options() {
     }
   });
 }
+
