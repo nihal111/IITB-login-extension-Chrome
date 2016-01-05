@@ -10,14 +10,17 @@ function check_status(){
 	chrome.tabs.getSelected(null,function(tab) {
 	    
 	    tablink = tab.url;
-	    console.log(tab.url);
+	    console.log("URL:",tab.url);
 	});
-
+}
+	
+function login(){
 	if (tablink=="https://internet.iitb.ac.in/logout.php")
-		console.log("Already kogged in");
+		console.log("Already logged in");
 	else 
 		console.log("Not logged in");
 }
 
 open();
-setTimeout(check_status,1000);
+setTimeout(check_status,400);
+setTimeout(login,500);
