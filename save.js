@@ -1,18 +1,17 @@
 // Saves options to chrome.storage
-
+var username,password;
 function save_options() {
-	alert("hey");
-  var username = document.getElementsByTagName('input')[0].value;
-  var password = document.getElementsByTagName('input')[1].value;
+  alert("Saved");
+  username = document.getElementsByTagName('input')[0].value;
+  password = document.getElementsByTagName('input')[1].value;
 
-  alert("SAVE!")
 chrome.storage.sync.set({
-    uname: username,
+    "uname": username,
     pass: password
-  }, function() {
-    console.log("Saved");
-
   });
+
+var uname= chrome.storage.sync.get("uname")['uname'];
+console.log(uname);
 
 }
 
@@ -29,5 +28,5 @@ function restore_options() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', restore_options);
+//document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('save').addEventListener('click',save_options);
