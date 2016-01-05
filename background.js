@@ -34,7 +34,7 @@ function closetab(){
 open();
 setTimeout(check_status,400);
 setTimeout(login,500);
-setTimeout(closetab,2000);
+//setTimeout(closetab,2000);
 
 
 
