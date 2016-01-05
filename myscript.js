@@ -1,4 +1,5 @@
 var form = document.forms[0];
+
 var username, password;
 
 function retrieve()
@@ -27,4 +28,5 @@ function submit()
 }
 
 retrieve();
-setTimeout(submit,1);
+
+setTimeout(submit,10);
