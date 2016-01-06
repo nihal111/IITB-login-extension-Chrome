@@ -1,30 +1,11 @@
 var tablink = "https://internet.iitb.ac.in/";
 var interval = 29*60*1000;
 
-
 function open(){
 	chrome.tabs.create({ url: tablink });
 	console.log("Opened internet.iitb.ac.in");
 }
 
-function check_status(){
-	chrome.tabs.getSelected(null,function(tab) {
-	    
-	    tablink = tab.url;
-	    console.log("URL:",tab.url);
-
-	});
-}
-	
-function login(){
-	if (tablink=="https://internet.iitb.ac.in/logout.php")
-		console.log("Already logged in");
-	else 
-		{
-			console.log("Not logged in");
-			
-		}
-}
 
 function closetab(){
 	chrome.tabs.getSelected(null,function(tab) {
@@ -34,10 +15,16 @@ function closetab(){
 
 function perform(){
 	open();
-	setTimeout(check_status,400);
-	setTimeout(login,500);
-	setTimeout(closetab,1000);
+	
+	chrome.tabs.onUpdated.addListener(function(tabid, changeinfo, tab) {
+    var url = tab.url;
+        if (url == "https://internet.iitb.ac.in/logout.php" && changeinfo.status == "complete") {
+        	closetab();
+    }
+   });
+
 }
+
 chrome.windows.onCreated.addListener(function() {
 perform();
 });
