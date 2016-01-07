@@ -12,6 +12,7 @@ function save_options() {
   values[key1]=username;
   values[key2]=password;
   values[key3]=document.getElementById("internet").checked;
+  console.log(values[key3]);
   values[key4]=document.getElementById("gpo").checked;
   values[key5]=document.getElementById("moodle").checked;
   chrome.storage.local.set(values);
@@ -31,7 +32,7 @@ function restore_options() {
     document.getElementsByTagName('input')[1].value=items.password;
   });
     chrome.storage.local.get(key3 , function(items) {
-    console.log("Getting")
+    console.log(items.internet)
     document.getElementById("internet").checked=items.internet;
   });
     chrome.storage.local.get(key4 , function(items) {
