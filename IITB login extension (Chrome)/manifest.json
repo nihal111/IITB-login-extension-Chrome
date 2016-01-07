@@ -20,8 +20,11 @@
   },
   "content_scripts": [
         {
-            "matches": ["https://internet.iitb.ac.in/index.php*",
-                "https://internet.iitb.ac.in/"
+            "matches": ["https://internet.iitb.ac.in/",
+            "https://internet.iitb.ac.in/index.php",
+            "https://gpo.iitb.ac.in/src/login.php?secure_login=yes",
+            "http://moodle.iitb.ac.in/login/index.php",
+            "http://moodle.iitb.ac.in/"
             ],
             "js": ["myscript.js"]
         }
